@@ -1,0 +1,26 @@
+{
+  "name": "unbuild-repro-1",
+  "private": true,
+  "devDependencies": {
+    "bun-types": "latest",
+    "typescript": "^5.0.0",
+    "unbuild": "^2.0.0",
+    "vitest": "^0.34.5"
+  },
+  "module": "./dist/index.mjs",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "unbuild",
+    "test": "vitest run"
+  }
+}
